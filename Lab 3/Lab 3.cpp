@@ -35,7 +35,8 @@ void avgOddArray(const int[], const int, int&);
 #include <cstdlib>
 #include <ctime>
 
-//task 1
+const double VAT = 0.21;
+
 int main() {
 	int choice;
 	const int SIZE = 10;
@@ -68,11 +69,12 @@ int main() {
 		case 5:
 			cout << "\nAll quantities are positive: " << (isAllPositive(quantity, SIZE) ? "Yes" : "No");
 			break;
-		case 6:
+		case 6: {
 			int avgOdd;
 			avgOddArray(total, SIZE, avgOdd);
 			cout << "\nAverage of odd values in total: " << avgOdd;
 			break;
+		}
 		case 7:
 			break;
 		default:
@@ -86,32 +88,38 @@ int main() {
 }
 
 
+
 /**
  * <code>printMenu</code> shows a menu and accepts the choice
  * from the user which is returned.
  * <BR>
  * @return Returns the menu choice
  */
+//task 3
 int printMenu() {
 	int choice;
 
 	do {
 		cout << "\n == MENU ==";
 		cout << "\n1) Enter quantity";
-		cout << "\n2) Calculate total";
+		cout << "\n2) Calculate total (with VAT)";
 		cout << "\n3) Print total";
-		cout << "\n4) Exit";
+		cout << "\n4) Sum of odd values in total";
+		cout << "\n5) Check if all quantities are positive";
+		cout << "\n6) Average of odd values in total";
+		cout << "\n7) Exit";
 
 		cout << "\nEnter the choice: ";
 		cin >> choice;
 
-		if (choice < 1 || choice > 4) {
+		if (choice < 1 || choice > 7) {
 			cout << "\nWrong choice, try again.";
 		}
-		//bug 6
-	} while (choice < 1 || choice > 4);
+	} while (choice < 1 || choice > 7);
+
 	return choice;
 }
+
 
 /**
  * <code>fillInArray</code> is a function that will
