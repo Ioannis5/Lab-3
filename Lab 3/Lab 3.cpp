@@ -9,9 +9,9 @@
  *  \date      17/05/2025
  *  \bug       Fixed logical bugs
  *  \copyright University of Nicosia.
- * 
- 
- //tutorial 3 part 3
+ */
+
+//Tutorial 3 Lab 3
 #include <iostream>
 #include <cassert>
 #include <cstdlib>
@@ -205,4 +205,3 @@ void avgOddArray(const int arr[][2], const int size, int& avgOdd) {
     }
     avgOdd = (count > 0) ? (sum / count) : 0;
 }
-
