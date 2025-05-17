@@ -186,8 +186,20 @@ bool isAllPositive(const int arr[], const int size) {
 	return true;
 }
 
-
-// Finds the average of all the odd numbers in the array and stores this in the last argument
+//function 3
+/**
+ * Calculates the average of all odd numbers in the array.
+ * @param arr The array to process.
+ * @param size The number of elements in the array.
+ * @param avgOdd Reference to store the average of odd numbers.
+ */
 void avgOddArray(const int arr[], const int size, int& avgOdd) {
-	//@TODO: You will need to complete this. Including makeing the appropriate comment header
+	int sum = 0, count = 0;
+	for (int i = 0; i < size; ++i) {
+		if (arr[i] % 2 != 0) {
+			sum += arr[i];
+			count++;
+		}
+	}
+	avgOdd = (count > 0) ? (sum / count) : 0;
 }
