@@ -32,47 +32,59 @@ void avgOddArray(const int[], const int, int&);
  * <BR>
  * @return Returns 0 if success, any other value otherwise.
  */
+#include <cstdlib>
+#include <ctime>
+
+//task 1
 int main() {
 	int choice;
 	const int SIZE = 10;
 
-	// Initialize array price
-	int price[SIZE] = { 12, 4, 8, 1, 17, 2, 4, 2, 9, 1 };
-	// Declare array quantity and total
-	//bug 2
-	int quantity[SIZE], total[SIZE];
+	srand(time(0));
 
-	// Interactive menu
+	int price[SIZE];
+	for (int i = 0; i < SIZE; ++i) {
+		price[i] = rand() % 20 + 1;
+	}
+
+	int quantity[SIZE] = { 0 }, total[SIZE] = { 0 };
+
 	do {
 		choice = printMenu();
 
 		switch (choice) {
-			// Enter quantity
 		case 1:
-			//bug 1
 			fillInArray(quantity, SIZE);
 			break;
-			// Calculate total
 		case 2:
-			multArrays(quantity, total, price, SIZE);
+			multArrays(quantity, price, total, SIZE);
 			break;
-			// Print total
 		case 3:
 			displayArray(total, SIZE);
 			break;
-			// Exit
 		case 4:
-			// No code needed
+			cout << "\nSum of odd values in total: " << sumOddArray(total, SIZE);
 			break;
-			//bug 5
+		case 5:
+			cout << "\nAll quantities are positive: " << (isAllPositive(quantity, SIZE) ? "Yes" : "No");
+			break;
+		case 6:
+			int avgOdd;
+			avgOddArray(total, SIZE, avgOdd);
+			cout << "\nAverage of odd values in total: " << avgOdd;
+			break;
+		case 7:
+			break;
 		default:
+			cout << "\nInvalid choice. Please try again.";
 			break;
 		}
-	} while (choice != 4);
+	} while (choice != 7);
 
 	cout << "\nHave a nice day:)" << endl;
 	return 0;
 }
+
 
 /**
  * <code>printMenu</code> shows a menu and accepts the choice
