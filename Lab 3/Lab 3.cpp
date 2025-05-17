@@ -48,7 +48,8 @@ int main() {
 		switch (choice) {
 			// Enter quantity
 		case 1:
-			fillInArray(quantity, 11);
+			//bug 1
+			fillInArray(quantity, SIZE);
 			break;
 			// Calculate total
 		case 2:
