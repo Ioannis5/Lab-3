@@ -128,7 +128,8 @@ void multArrays(const int arrQuantity[], const int arrPrice[], int arrTotal[], c
 	assert(size > 0);
 
 	for (int i = 0; i <= size; ++i) {
-		arrTotal[i] = arrQuantity[i] + arrPrice[i + 1];
+		//bug 3
+		arrTotal[i] = arrQuantity[i] * arrPrice[i];
 	}
 }
 
