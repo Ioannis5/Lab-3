@@ -7,9 +7,9 @@
  *                   the code with a comment on the fix you did
  *                3) There are a three functions that are not completed, you need to
  *                   complete them and also update the menu and the main function
- *  \author    Harald Gjermundrod
+ *  \author    Ioannis Koudounas
  *  \version   0.1
- *  \date      28/01/2025
+ *  \date      17/05/2025
  *  \bug       Many logical bugs
  *  \copyright University of Nicosia.
  */
@@ -171,12 +171,21 @@ int sumOddArray(const int arr[], const int size) {
 	return sum;
 }
 
-
-// If all the values in the array are positive return true
+//function 2
+/**
+ * Checks if all values in the array are positive.
+ * @param arr The array to check.
+ * @param size The number of elements in the array.
+ * @return True if all elements are positive, false otherwise.
+ */
 bool isAllPositive(const int arr[], const int size) {
-	//@TODO: You will need to complete this. Including makeing the appropriate comment header
-	return 0;
+	for (int i = 0; i < size; ++i) {
+		if (arr[i] <= 0)
+			return false;
+	}
+	return true;
 }
+
 
 // Finds the average of all the odd numbers in the array and stores this in the last argument
 void avgOddArray(const int arr[], const int size, int& avgOdd) {
